@@ -1,0 +1,26 @@
+{
+  "name": "basic-app",
+  "version": "1.0.0",
+  "description": "testing arweave",
+  "main": "dist/app.js",
+  "scripts": {
+    "start": "tsc && node dist/app.js",
+    "test": "ts-mocha tests/**/*.test.ts"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "arweave": "^1.10.11",
+    "smartweave": "^0.4.27"
+  },
+  "devDependencies": {
+    "chai": "latest",
+    "eslint": "latest",
+    "testweave-sdk": "https://arweave.net/QlYhKT7P4g01WN27LoqMCfp_AgEG5RTvLycVhbOIWIs",
+    "mocha": "latest",
+    "typescript": "^3.3.3",
+    "tslint": "^5.12.1",
+    "ts-mocha": "latest",
+    "typedoc": "latest"
+  }
+}
