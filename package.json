@@ -2,25 +2,28 @@
   "name": "basic-app",
   "version": "1.0.0",
   "description": "testing arweave",
-  "main": "dist/app.js",
+  "main": "dist/index.js",
   "scripts": {
-    "start": "tsc && node dist/app.js",
+    "start": "tsc && node dist/src/index.js",
+    "explore": "tsc && node dist/src/explore.js",
     "test": "ts-mocha tests/**/*.test.ts"
   },
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "arweave": "^1.10.11",
-    "smartweave": "^0.4.27"
+    "arweave": "latest",
+    "smartweave": "latest"
   },
   "devDependencies": {
+    "@types/chai": "latest",
+    "@types/mocha": "latest",
     "chai": "latest",
     "eslint": "latest",
-    "testweave-sdk": "https://arweave.net/QlYhKT7P4g01WN27LoqMCfp_AgEG5RTvLycVhbOIWIs",
     "mocha": "latest",
-    "typescript": "^3.3.3",
-    "tslint": "^5.12.1",
+    "testweave-sdk": "https://arweave.net/QlYhKT7P4g01WN27LoqMCfp_AgEG5RTvLycVhbOIWIs",
     "ts-mocha": "latest",
-    "typedoc": "latest"
+    "tslint": "latest",
+    "typedoc": "latest",
+    "typescript": "latest"
   }
 }
