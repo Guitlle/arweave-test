@@ -4,6 +4,7 @@
   "description": "testing arweave",
   "main": "dist/index.js",
   "scripts": {
+    "build": "tsc",
     "start": "tsc && node dist/src/index.js",
     "explore": "tsc && node dist/src/explore.js",
     "test": "ts-mocha tests/**/*.test.ts"
@@ -12,6 +13,7 @@
   "license": "MIT",
   "dependencies": {
     "arweave": "latest",
+    "arweave-deploy": "^1.9.1",
     "smartweave": "latest"
   },
   "devDependencies": {
