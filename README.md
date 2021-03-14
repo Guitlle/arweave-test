@@ -26,11 +26,9 @@ TestWeave SDK (https://github.com/ArweaveTeam/testweave-sdk/) sets up a root acc
 To use the scripts included in this repository do `npm run build` (after running `npm install`, of course). Then do:
 
 ```
+mkdir .keys
 node dist/src/startup.js
 ```
 
+This will create 10 user accounts and transfer 10.5AR to each one of them from the root account.
 
-
-```
-node_modules/arweave-deploy/dist/arweave --host localhost --protocol http --port 1984 balance
-```
