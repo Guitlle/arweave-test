@@ -16,16 +16,25 @@ async function main() {
   fs.writeFileSync('.keys/root-key.json', JSON.stringify(testWeave.rootJWK));
   
   for (let i=1; i<=10; i++) {
-    const jkw = await arweave.wallets.generate();
-    const generatedAddr = await arweave.wallets.getAddress(jkw)
+    let jkw = await arweave.wallets.generate();
+    let generatedAddr = await arweave.wallets.getAddress(jkw)
     console.log(i, "generated wallet", generatedAddr);
     fs.writeFileSync(`.keys/user-${i}-key_addr_${generatedAddr}.json`, JSON.stringify(jkw));
-    testWeave.drop(generatedAddr, '10000');
+    
+    let transaction = await arweave.createTransaction({
+      target: generatedAddr,
+      quantity: arweave.ar.arToWinston('10.5')
+    }, testWeave.rootJWK);
+    await arweave.transactions.sign(transaction, testWeave.rootJWK);
+    console.log("Transfer money to new wallet: ", transaction);
+    const response = await arweave.transactions.post(transaction);
+    await testWeave.mine();
+    console.log(response);
   }
-  await testWeave.mine();
+
   console.log("Finished");
   
-  process.exit()
+  process.exit();
 }
 
 main()
